@@ -1,0 +1,276 @@
+/*all funfacts about the standart drinks. parameter D is to destroy the window*/
+
+funfact(cola,D):-
+	send(D,destroy),
+	show_fact("The CocaCola company was the biggste company untill 2001").
+	
+funfact(water,D):-
+	send(D,destroy),
+	show_fact("The human body has up to 60% water in it").
+	
+funfact(sparkling_water,D):-
+	send(D,destroy),
+	show_fact("the first carbonated water was produced in the early 1740s").
+	
+funfact(fanta,D):-
+	send(D,destroy),
+	show_fact("fanta is also a female first name").
+	
+funfact(sprite,D):-
+	send(D,destroy),
+	show_fact("was first developed in West Germany in 1959 as Fanta Klare Zitrone (Clear Lemon Fanta)").
+	
+funfact(beer,D):-
+	send(D,destroy),
+	show_fact("Beer is one of the oldest and most widely consumed alcoholic drinks in the world").
+	
+funfact(gin,D):-
+	send(D,destroy),
+	show_fact("gin is most commonly consumed mixed with tonic water").
+	
+funfact(orange_juice,D):-
+	send(D,destroy),
+	show_fact("it takes between 13 and 15 oranges to produce a 1-liter bottle of orange juice").
+	
+funfact(coffee,D):-
+	send(D,destroy),
+	show_fact("The world consumes close to 2.25 billion cups of coffee every day").
+	
+funfact(milk,D):-
+	send(D,destroy),
+	show_fact("all female mammals produce milk").
+		
+funfact(_,D):-
+	send(D,destroy),
+	show_fact("Sorry no fact found for this drink!").
+
+/*workaround to list all drinks. i could use listing and filter out the names but i thought this way is sufficiant*/
+
+drink(sparkling_water,_):-
+	true.
+	
+drink(water,_):-
+	true.
+	
+drink(cola,_):-
+	true.
+	
+drink(fanta,_):-
+	true.
+	
+drink(sprite,_):-
+	true.
+
+drink(herbal_tee,_):-
+	true.
+
+drink(fruit_tee,_):-
+	true.
+	
+drink(beer,_):-
+	true.
+	
+drink(vodka,_):-
+	true.
+	
+drink(gin,_):-
+	true.
+	
+drink(red_wine,_):-
+	true.
+	
+drink(white_wine,_):-
+	true.
+
+drink(orange_juice,_):-
+	true.
+
+drink(coffee,_):-
+	true.
+	
+drink(milk,_):-
+	true.
+	
+drink(hot_chocolate,_):-
+	true.
+
+/*all the standart drinks i added*/
+
+drink(sparkling_water):-
+    is(sparkling),
+    color(clear),
+    not(has(alcohol,"")),
+    is(cold),
+    not(tastes("",sweet)),
+    not(is(organic)),
+    not(is(brewage)),
+    made_of(water),
+    !.
+
+drink(water):-
+    not(is(sparkling)),
+    color(clear),
+    not(has(alcohol,"")),
+    is(cold),
+    not(tastes("",sweet)),
+    not(is(organic)),
+    not(is(brewage)),
+    made_of(water),
+    !.
+
+drink(cola):-
+    is(sparkling),
+    color(black),
+    not(has(alcohol,"")),
+    is(cold),
+    tastes("",sweet),
+    not(is(organic)),
+    not(is(brewage)),
+    made_of(chemials_and_sugar),
+    !.
+	
+drink(fanta):-
+    is(sparkling),
+    color(yellow),
+    not(has(alcohol,"")),
+    is(cold),
+    tastes("",sweet),
+    not(is(organic)),
+    not(is(brewage)),
+    made_of(chemials_and_sugar),
+    !.
+
+drink(sprite):-
+    is(sparkling),
+    color(clear),
+    not(has(alcohol,"")),
+    is(cold),
+    tastes("",sweet),
+    not(is(organic)),
+    not(is(brewage)),
+    made_of(chemials_and_sugar),
+    !.
+
+drink(herbal_tee):-
+    not(is(sparkling)),
+	color(slightly_green),
+    not(has(alcohol,"")),
+    not(is(cold)),
+    not(tastes("",sweet)),
+    not(is(organic)),
+    is(brewage),
+    made_of(herbal),
+    !.
+
+drink(fruit_tea):-
+    not(is(sparkling)),
+	color(slightly_red),
+    not(has(alcohol,"")),
+    not(is(cold)),
+    not(tastes("",sweet)),
+    not(is(organic)),
+    is(brewage),
+    made_of(dried_and_grounded_fruits),
+    !.
+
+drink(beer):-
+    is(sparkling),
+	color(slightly_yellow),
+    has(alcohol,""),
+    is(cold),
+    not(tastes("",sweet)),
+    not(is(organic)),
+    not(is(brewage)),
+    made_of(hop_and_malt),
+    !.
+
+drink(vodka):-
+    not(is(sparkling)),
+	color(clear),
+    has(alcohol,""),
+    is(cold),
+    not(tastes("",sweet)),
+    not(is(organic)),
+    not(is(brewage)),
+    made_of(water_and_ethanol),
+    !.
+
+drink(gin):-
+    not(is(sparkling)),
+	color(clear),
+ 	has(alcohol,""),
+    is(cold),
+    not(tastes("",sweet)),
+    not(is(organic)),
+    not(is(brewage)),
+    made_of(junipers),
+    !.
+
+drink(red_wine):-
+    not(is(sparkling)),
+	color(red),
+    has(alcohol,""),
+    not(is(cold)),
+    not(tastes("",sweet)),
+    not(is(organic)),
+    not(is(brewage)),
+    made_of(grapes),
+    !.
+
+drink(white_win):-
+    not(is(sparkling)),
+	color(clear),
+    has(alcohol,""),
+    is(cold),
+    not(tastes("",sweet)),
+    not(is(organic)),
+    not(is(brewage)),
+    made_of(grapes),
+    !.
+
+drink(orange_juice):-
+    not(is(sparkling)),
+	color(orange),
+    not(has(alcohol,"")),
+    not(is(cold)),
+    tastes("",sweet),
+    not(is(organic)),
+    not(is(brewage)),
+    made_of(oranges),
+    !.
+
+drink(coffee):-
+    not(is(sparkling)),
+	color(black),
+    not(has(alcohol,"")),
+    not(is(cold)),
+    not(tastes("",sweet)),
+    not(is(organic)),
+    is(brewage),
+    made_of(coffee_beans),
+    !.
+
+drink(milk):-
+    not(is(sparkling)),
+	color(white),
+    not(has(alcohol,"")),
+    not(is(cold)),
+    not(tastes("",sweet)),
+    is(organic),
+    not(is(brewage)),
+    made_of(milk),
+    !.
+
+drink(hot_chocolate):-
+    not(is(sparkling)),
+	color(brown),
+    not(has(alcohol,"")),
+    not(is(cold)),
+    tastes("",sweet),
+    is(organic),
+    is(brewage),
+    made_of(kakao_and_milk),
+    !.
+
+/* with this added it will always end here */
+%drink(unknown_try_add_it).

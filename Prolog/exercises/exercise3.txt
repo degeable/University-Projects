@@ -1,0 +1,39 @@
+3.1
+
+descend(X,Y) :- child(X,Y).
+descend(X,Y) :- descend(X,Z),
+                 descend(Z,Y).
+child(hans,blag).
+child(wurst,blag).
+
+
+if we now ask for decend(hans,wurst) it gets stuck in a loop -> Stack limit (0.2Gb) exceeded,
+
+3.2
+
+directlyIn(katarina,olga).
+directlyIn(olga,natasha).
+directlyIn(natasha,irina).
+in(X,Y):- directlyIn(X,Y).
+in(X,Y):-directlyIn(X,Z),directlyIn(Z,Y).
+
+3.3 
+directTrain(saarbruecken,dudweiler).
+directTrain(forbach,saarbruecken).
+directTrain(freyming,forbach).
+directTrain(stAvold,freyming).
+directTrain(fahlquemont,stAvold).
+directTrain(metz,fahlquemont).
+directTrain(nancy,metz).
+travelFromTo(A,B):- directTrain(A,B).
+travelFromTo(A,B):- travelFromTo(A,C),travelFromTo(C,B).
+
+3.4 TODO
+
+numeral(0).
+numeral(succ(X)):- numeral(X).
+greater_than(succ(_), 0).
+greater_than(succ(X), succ(Y)):-
+  greater_than(X, Y).
+ 
+3.5 TODO

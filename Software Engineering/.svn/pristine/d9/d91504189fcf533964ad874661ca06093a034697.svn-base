@@ -1,0 +1,68 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package terminverwaltung;
+//import java.lang.String;
+/**
+ *
+ * @author istkastra
+ */
+public class Ausstattung {
+    private int Beamer;
+    private int Flipchart;
+    private int Computer;
+    
+
+
+    /**
+     * @return the Beamer
+     */
+    public int getBeamer() {
+        return Beamer;
+    }
+
+    /**
+     * @param Beamer the Beamer to set
+     */
+    public void setBeamer(int Beamer) {
+        this.Beamer = Beamer;
+    }
+
+    /**
+     * @return the Flipchart
+     */
+    public int getFlipchart() {
+        return Flipchart;
+    }
+
+    /**
+     * @param Flipchart the Flipchart to set
+     */
+    public void setFlipchart(int Flipchart) {
+        this.Flipchart = Flipchart;
+    }
+
+    /**
+     * @return the Computer
+     */
+    public int getComputer() {
+        return Computer;
+    }
+
+    /**
+     * @param Computer the Computer to set
+     */
+    public void setComputer(int Computer) {
+        this.Computer = Computer;
+    }
+
+    public Ausstattung() {
+        Beamer = 0;
+        Computer = 0;
+        Flipchart = 0;
+    }
+    
+}
+

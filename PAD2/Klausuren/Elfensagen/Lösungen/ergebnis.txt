@@ -1,0 +1,67 @@
+Noun: Elfen(3): 1, 17, 20
+Noun: Haufen(2): 3, 3
+Noun: Lust(2): 18, 22
+Noun: Menschen(2): 21, 29
+Noun: Pferde(2): 29, 31
+Noun: Sonnenuntergang(2): 14, 17
+Noun: Abgründen(1): 5
+Noun: Aufenthaltsort(1): 3
+Noun: Auge(1): 8
+Place: Coirshian(1)@ 56.7599 / -4.31415: 11
+Noun: Ehrerbietung(1): 26
+Noun: Einfluß(1): 25
+Noun: Erdhügeln(1): 7
+Noun: Erhöhungen(1): 13
+Noun: Farbe(1): 16
+Noun: Felsenstücken(1): 7
+Noun: Fenster(1): 8
+Noun: Freitag(1): 25
+Noun: Freude(1): 18
+Noun: Fröhlichkeit(1): 20
+Noun: Gegenden(1): 6
+Noun: Gegenwart(1): 28
+Noun: Gelegenheiten(1): 28
+Noun: Geschrill(1): 27
+Noun: Gestalt(1): 6
+Noun: Glanz(1): 22
+Noun: Glück(1): 21
+Noun: Grashügel(1): 10
+Noun: Hauptbeschäftigungen(1): 19
+Noun: Hochländer(1): 24
+Noun: Höhlen(1): 5
+Place: Katrine(1)@ 56.2544 / -4.51556: 13
+Noun: Kreisen(1): 15
+Noun: Licht(1): 10
+Place: Lochcon(1)@ 56.7599 / -4.14544: 11
+Noun: Lustbarkeiten(1): 2
+Noun: Mondschein(1): 11
+Noun: Morgen(1): 29
+Noun: Musik(1): 19
+Noun: Mähnen(1): 30
+Noun: Nacht(1): 9
+Noun: Nähe(1): 12
+Place: Perthshire(1)@ 56.397 / -3.437: 10
+Noun: Platz(1): 11
+Noun: Rauchfänge(1): 8
+Noun: Schweif(1): 30
+Noun: Sees(1): 13
+Noun: Shian(1): 4
+Noun: Shians(1): 23
+Noun: Spuren(1): 15
+Noun: Stein(1): 6
+Noun: Ställen(1): 29
+Noun: Tag(1): 9
+Noun: Tanz(1): 18
+Noun: Tomhan(1): 4
+Noun: Türen(1): 8
+Noun: Türmchen(1): 6
+Noun: Umständen(1): 4
+Noun: Vergnügungen(1): 1
+Noun: Versammlungen(1): 17
+Noun: Volk(1): 1
+Noun: Wesen(1): 24
+Noun: Winterschnee(1): 31
+Noun: Wohnung(1): 3
+Noun: Wohnungen(1): 5
+Noun: Zug(1): 27
+Noun: Zügel(1): 28

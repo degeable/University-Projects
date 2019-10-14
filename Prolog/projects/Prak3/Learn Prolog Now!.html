@@ -1,0 +1,357 @@
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <link href="Learn%20Prolog%20Now!_files/lpn.css" rel="stylesheet">
+    <link href="Learn%20Prolog%20Now!_files/jquery-ui.css" rel="stylesheet">
+    <script src="Learn%20Prolog%20Now!_files/jquery.js"></script>
+    <script src="Learn%20Prolog%20Now!_files/jquery-ui.js"></script>
+    <script src="Learn%20Prolog%20Now!_files/lpn.js"></script>
+    <title>Learn Prolog Now!</title>
+    <link href="Learn%20Prolog%20Now!_files/lpn_reds2.css" rel="stylesheet" type="text/css">
+  </head>
+  <body>
+    <table width="100%">
+      <tbody><tr>
+	<td>
+	  <div style="width:500pt;"></div>
+	</td>
+      </tr>
+      <tr>
+	<td>
+	  <div class="coloredbar">
+	    <div class="swish-disclaimer">This version of Learn Prolog Now! embeds <a href="http://swish.swi-prolog.org/">
+	      <span style="color:darkblue">SWI</span>
+	      <span style="color:maroon">SH</span>
+	    </a>,
+<a href="http://www.swi-prolog.org/">SWI-Prolog</a> for SHaring.
+The current version rewrites the Learn Prolog Now! HTML on the fly, recognising
+source code and example queries.  It is not yet good at recognising the relations
+between source code fragments and queries.  Also Learn Prolog Now! needs some
+updating to be more compatible with SWI-Prolog.  All sources are on GitHub:
+
+<div class="github">
+	      <span>LearnPrologNow</span>
+	      <iframe class="github-btn" src="Learn%20Prolog%20Now!_files/github-btn.html" title="Fork on GitHub" width="102" height="20"></iframe>
+	      <span>LPN SWISH Proxy</span>
+	      <iframe class="github-btn" src="Learn%20Prolog%20Now!_files/github-btn_002.html" title="Fork on GitHub" width="102" height="20"></iframe>
+	      <span>SWISH</span>
+	      <iframe class="github-btn" src="Learn%20Prolog%20Now!_files/github-btn_003.html" title="Fork on GitHub" width="102" height="20"></iframe>
+	    </div></div>
+	  </div>
+	  <div class="lpnheader">
+	    <a href="http://lpn.swi-prolog.org/index.php">Learn Prolog Now!</a>
+	  </div>
+	  <div class="authorbar">  by <a href="http://www.loria.fr/~blackbur/">Patrick Blackburn</a>, 
+     <a href="http://www.let.rug.nl/bos/">Johan Bos</a>, and 
+     <a href="http://cs.union.edu/~striegnk/">Kristina Striegnitz</a>
+  </div>
+	  <div class="navbar">
+	    <ul>
+	      <li>
+		<a href="http://lpn.swi-prolog.org/lpnpage.php?pageid=top">LPN! Home</a>
+	      </li>
+	      <li>
+		<a href="http://lpn.swi-prolog.org/lpnpage.php?pageid=online">Free Online Version</a>
+	      </li>
+	      <li>
+		<a href="http://lpn.swi-prolog.org/lpnpage.php?pageid=handheld">Paperback English</a>
+	      </li>
+	      <li>
+		<a href="http://lpn.swi-prolog.org/lpnpage.php?pageid=french">Paperback Français</a>
+	      </li>
+	      <li>
+		<a href="http://lpn.swi-prolog.org/lpnpage.php?pageid=teaching">Teaching Prolog</a>
+	      </li>
+	      <li>
+		<a href="http://lpn.swi-prolog.org/lpnpage.php?pageid=implementations">Prolog Implementations</a>
+	      </li>
+	      <li>
+		<a href="http://lpn.swi-prolog.org/lpnpage.php?pageid=manuals">Prolog Manuals</a>
+	      </li>
+	      <li>
+		<a href="http://lpn.swi-prolog.org/lpnpage.php?pageid=links">Prolog Links</a>
+	      </li>
+	      <li>
+		<a href="http://lpn.swi-prolog.org/lpnpage.php?pageid=thanks">Thanks!</a>
+	      </li>
+	      <li>
+		<a href="http://lpn.swi-prolog.org/lpnpage.php?pageid=contact">Contact us</a>
+	      </li>
+	    </ul>
+	  </div>
+	  <div class="content">
+	    <div class="crosslinks">
+	      <p class="noindent"> [ 
+<a href="http://lpn.swi-prolog.org/lpnpage.php?pagetype=html&amp;pageid=lpn-htmlse16"> next </a> ] [ 
+<a href="http://lpn.swi-prolog.org/lpnpage.php?pagetype=html&amp;pageid=lpn-htmlse14"> prev </a> ] [ 
+<a href="http://lpn.swi-prolog.org/lpnpage.php?pagetype=html&amp;pageid=lpn-htmlse14"> prev-tail </a> ] [ 
+<a href="http://lpn.swi-prolog.org/lpnpage.php?pagetype=html&amp;pageid=#taillpn-htmlse15"> tail </a> ] [ 
+<a href="http://lpn.swi-prolog.org/lpnpage.php?pagetype=html&amp;pageid=lpn-htmlch4"> up </a> ] </p>
+	    </div>
+	    <h3 class="sectionHead"> 
+<span class="titlemark"> 4.3 </span> 
+<a id="x29-420004.3"> </a> Recursing down Lists </h3>
+	    <p class="noindent"> The 
+<span class="verb">
+	      <span class="cmtt-10"> member/2 </span>
+	    </span> predicate works by recursively working its way down a list,
+ doing something to the head, and then recursively doing the same thing 
+to the tail. Recursing down a list (or indeed, several lists) in this 
+way is extremely common in Prolog; so common, in fact, that it is 
+important that you really master the technique. So let’s look at another
+ example. </p>
+	    <p class="indent"> When working with lists, we often want to 
+compare one list with another, or to copy bits of one list into another,
+ or to translate the contents of one list into another, or something 
+similar. Here’s an example. Let’s suppose we need a predicate 
+<span class="verb">
+	      <span class="cmtt-10"> a2b/2 </span>
+	    </span> that takes two lists as arguments, and succeeds if the first argument is a list of 
+<span class="verb">
+	      <span class="cmtt-10"> a </span>
+	    </span> s, and the second argument is a list of 
+<span class="verb">
+	      <span class="cmtt-10"> b </span>
+	    </span> s of exactly the same length. For example, if we pose the following query </p>
+	    <div class="source"><pre class="source swish" data-variant-id="group-1" id="fancyvrb197">a2b([a,a,a,a],[b,b,b,b]).</pre><div class="load"></div></div>
+	    <p class="noindent"> we want Prolog to say yes. On the other hand, if we pose the query </p>
+	    <pre class="query" id="fancyvrb198"><span class="swish query guessed">?- a2b([a,a,a,a],[b,b,b]).</span></pre>
+	    <p class="noindent"> or the query </p>
+	    <pre class="query" id="fancyvrb199"><span class="swish query guessed">?- a2b([a,c,a,a],[b,b,5,4]).</span></pre>
+	    <p class="noindent"> we want Prolog to say no. </p>
+	    <p class="indent"> When faced with such tasks, often the best way 
+to set about solving them is to start by thinking about the simplest 
+possible case. Now, when working with lists, thinking about the simplest
+ case often means thinking about the empty list, and it certainly means 
+this here. After all: what is the shortest possible list of 
+<span class="verb">
+	      <span class="cmtt-10"> a </span>
+	    </span> s? It’s the empty list. Why? Because it contains no 
+<span class="verb">
+	      <span class="cmtt-10"> a </span>
+	    </span> s at all. And what is the shortest possible list of 
+<span class="verb">
+	      <span class="cmtt-10"> b </span>
+	    </span> s? Again, the empty list: no 
+<span class="verb">
+	      <span class="cmtt-10"> b </span>
+	    </span> s whatsoever in that. So the most basic information our definition needs to contain is </p>
+	    <pre class="query" id="fancyvrb200"><span class="swish query guessed">?- a2b([],[]).</span></pre>
+	    <p class="noindent"> This records the obvious fact that the empty list contains exactly as many 
+<span class="verb">
+	      <span class="cmtt-10"> a </span>
+	    </span> s as 
+<span class="verb">
+	      <span class="cmtt-10"> b </span>
+	    </span> s. But although obvious, this fact turns out to play an important role in our program, as we shall see. </p>
+	    <p class="indent"> So far so good: but how do we proceed? Here’s the idea: for longer lists, 
+<span class="cmti-10"> think </span> 
+<span class="cmti-10"> recursively </span> . So: when should 
+<span class="verb">
+	      <span class="cmtt-10"> a2b/2 </span>
+	    </span> decide that two non-empty lists are a list of 
+<span class="verb">
+	      <span class="cmtt-10"> a </span>
+	    </span> s and a list of 
+<span class="verb">
+	      <span class="cmtt-10"> b </span>
+	    </span> s of exactly the same length? Simple: when the head of the first list is an 
+<span class="verb">
+	      <span class="cmtt-10"> a </span>
+	    </span> , and the head of the second list is a 
+<span class="verb">
+	      <span class="cmtt-10"> b </span>
+	    </span> , and 
+<span class="verb">
+	      <span class="cmtt-10"> a2b/2 </span>
+	    </span> decides that the two tails are lists of 
+<span class="verb">
+	      <span class="cmtt-10"> a </span>
+	    </span> s and 
+<span class="verb">
+	      <span class="cmtt-10"> b </span>
+	    </span> s of exactly the same length! This immediately gives us the following rule: </p>
+	    <div class="source"><pre class="source swish" data-variant-id="group-1" id="fancyvrb201">a2b([a|Ta],[b|Tb]) :- a2b(Ta,Tb).</pre><div class="load"></div></div>
+	    <p class="noindent"> This says: the 
+<span class="verb">
+	      <span class="cmtt-10"> a2b/2 </span>
+	    </span> predicate should succeed if its first argument is a list with head 
+<span class="verb">
+	      <span class="cmtt-10"> a </span>
+	    </span> , its second argument is a list with head 
+<span class="verb">
+	      <span class="cmtt-10"> b </span>
+	    </span> , and 
+<span class="verb">
+	      <span class="cmtt-10"> a2b/2 </span>
+	    </span> succeeds on the two tails. </p>
+	    <p class="indent"> Now, this definition make good sense 
+declaratively. It is a simple and natural recursive predicate, the base 
+clause dealing with the empty list, the recursive clause dealing with 
+non-empty lists. But how does it work in practice? That is, what is its 
+procedural meaning? For example, if we pose the query </p>
+	    <pre class="query" id="fancyvrb202"><span class="swish query guessed">?- a2b([a,a,a],[b,b,b]).</span></pre>
+	    <p class="noindent"> Prolog will say yes, which is what we want — but 
+<span class="cmti-10"> why </span> exactly does this happen? </p>
+	    <p class="indent"> Let’s work the example through. In this query, 
+neither list is empty, so the fact does not help. Thus Prolog goes on to
+ try the recursive rule. Now, the query does match the rule (after all, 
+the head of the first list is 
+<span class="verb">
+	      <span class="cmtt-10"> a </span>
+	    </span> and the head of the second is 
+<span class="verb">
+	      <span class="cmtt-10"> b </span>
+	    </span> ) so Prolog now has a new goal, namely </p>
+	    <pre class="query" id="fancyvrb203"><span class="swish query guessed">?- a2b([a,a],[b,b]).</span></pre>
+	    <p class="noindent"> Once again, the fact does not help with this, but the recursive rule can be used again, leading to the following goal: </p>
+	    <pre class="query" id="fancyvrb204"><span class="swish query guessed">?- a2b([a],[b]).</span></pre>
+	    <p class="noindent"> Yet again the fact does not help, but the recursive rule does, so we get the following goal: </p>
+	    <pre class="query" id="fancyvrb205"><span class="swish query guessed">?- a2b([],[]).</span></pre>
+	    <p class="noindent"> At last we can use the fact: this tells us that, yes, we really do have two lists here that contain exactly the same number of 
+<span class="verb">
+	      <span class="cmtt-10"> a </span>
+	    </span> s and 
+<span class="verb">
+	      <span class="cmtt-10"> b </span>
+	    </span> s (namely, none at all). And because this goal succeeds, this means that the goal </p>
+	    <pre class="query" id="fancyvrb206"><span class="swish query guessed">?- a2b([a],[b]).</span></pre>
+	    <p class="noindent"> succeeds too. This in turn means that the goal </p>
+	    <pre class="query" id="fancyvrb207"><span class="swish query guessed">?- a2b([a,a],[b,b]).</span></pre>
+	    <p class="noindent"> succeeds, and thus that the original goal </p>
+	    <pre class="query" id="fancyvrb208"><span class="swish query guessed">?- a2b([a,a,a],[b,b,b]).</span></pre>
+	    <p class="noindent"> is satisfied. </p>
+	    <p class="indent"> We could summarise this process as follows. 
+Prolog started with two lists. It peeled the head off each of them, and 
+checked that they were an 
+<span class="verb">
+	      <span class="cmtt-10"> a </span>
+	    </span> and a 
+<span class="verb">
+	      <span class="cmtt-10"> b </span>
+	    </span> , respectively, as required. It then recursively analysed 
+the tails of both lists. That is, it worked its way down both tails 
+simultaneously, checking that at each stage the tails were headed by an 
+<span class="verb">
+	      <span class="cmtt-10"> a </span>
+	    </span> and a 
+<span class="verb">
+	      <span class="cmtt-10"> b </span>
+	    </span> . Why did the process stop? Because at each recursive step 
+we had to work with shorter lists (namely the tails of the lists 
+examined at the previous step) and eventually we ended up with empty 
+lists. At this point, our rather trivial looking fact was able to play a
+ vital role: it said yes. This halted the recursion, and ensured that 
+the original query succeeded. </p>
+	    <p class="indent"> It’s is also important to think about what happens with queries that 
+<span class="cmti-10"> fail </span> . For example, if we pose the query </p>
+	    <pre class="query" id="fancyvrb209"><span class="swish query guessed">?- a2b([a,a,a,a],[b,b,b]).</span></pre>
+	    <p class="noindent"> Prolog will correctly say no. Why? because 
+after carrying out the 
+peel-off-the-head-and-recursively-examine-the-tail process three times, 
+it will be left with the query </p>
+	    <pre class="query" id="fancyvrb210"><span class="swish query guessed">?- a2b([a],[]).</span></pre>
+	    <p class="noindent"> But this goal cannot be satisfied. And if we pose the query </p>
+	    <pre class="query" id="fancyvrb211"><span class="swish query guessed">?- a2b([a,c,a,a],[b,b,5,4]).</span></pre>
+	    <p class="noindent"> after carrying out the peel-off-the-head-and-recursively-examine-the-tail process once, Prolog will have the goal </p>
+	    <pre class="query" id="fancyvrb212"><span class="swish query guessed">?- a2b([c,a,a],[b,5,4]).</span></pre>
+	    <p class="noindent"> and again, this cannot be satisfied. </p>
+	    <p class="indent"> Well, that’s how 
+<span class="verb">
+	      <span class="cmtt-10"> a2b/2 </span>
+	    </span> works in simple cases, but we haven’t exhausted its 
+possibilities yet. As always with Prolog, it’s a good idea to 
+investigate what happens when variables as used as input. And with 
+<span class="verb">
+	      <span class="cmtt-10"> a2b/2 </span>
+	    </span> something interesting happens: it acts as a translator, translating lists of 
+<span class="verb">
+	      <span class="cmtt-10"> a </span>
+	    </span> s to lists of 
+<span class="verb">
+	      <span class="cmtt-10"> b </span>
+	    </span> s, and vice versa. For example the query </p>
+	    <pre class="query" id="fancyvrb213"><span class="swish query guessed">?- a2b([a,a,a,a],X).</span></pre>
+	    <p class="noindent"> yields the response </p>
+	    <pre class="verbatim" id="fancyvrb214">X = [b,b,b,b].</pre>
+	    <p class="noindent"> That is, the list of 
+<span class="verb">
+	      <span class="cmtt-10"> a </span>
+	    </span> s has been translated to a list of 
+<span class="verb">
+	      <span class="cmtt-10"> b </span>
+	    </span> s. Similarly, by using a variable in the first argument position, we can use it to translate lists of 
+<span class="verb">
+	      <span class="cmtt-10"> b </span>
+	    </span> s to lists of 
+<span class="verb">
+	      <span class="cmtt-10"> a </span>
+	    </span> s: </p>
+	    <pre class="query" id="fancyvrb215"><span class="swish query guessed">?- a2b(X,[b,b,b,b]).
+
+X = [a,a,a,a].</span></pre>
+	    <p class="indent"> And of course, we can use variables in both argument positions: </p>
+	    <pre class="query" id="fancyvrb216"><span class="swish query guessed">?- a2b(X,Y).</span></pre>
+	    <p class="noindent"> Can you work out what happens in this case? </p>
+	    <p class="indent"> To sum up: 
+<span class="verb">
+	      <span class="cmtt-10"> a2b/2 </span>
+	    </span> is an extremely simple example of a program that works by 
+recursing its way down a pair of lists. But don’t be fooled by its 
+simplicity: the kind of programming it illustrates is fundamental to 
+Prolog. Both its declarative form (a base clause dealing with the empty 
+list, a recursive clause dealing with non-empty lists) and the 
+procedural idea it trades on (do something to the heads, and then 
+recursively do the same thing to the tails) come up again and again in 
+Prolog programming. In fact, in the course of your Prolog career, you’ll
+ find that you’ll write what is essentially the 
+<span class="verb">
+	      <span class="cmtt-10"> a2b/2 </span>
+	    </span> predicate, or a more complex variant of it, many times over in many different guises. </p>
+	    <div class="crosslinks">
+	      <p class="noindent"> [ 
+<a href="http://lpn.swi-prolog.org/lpnpage.php?pagetype=html&amp;pageid=lpn-htmlse16"> next </a> ] [ 
+<a href="http://lpn.swi-prolog.org/lpnpage.php?pagetype=html&amp;pageid=lpn-htmlse14"> prev </a> ] [ 
+<a href="http://lpn.swi-prolog.org/lpnpage.php?pagetype=html&amp;pageid=lpn-htmlse14"> prev-tail </a> ] [ 
+<a href="http://lpn.swi-prolog.org/lpnpage.php?pagetype=html&amp;pageid=lpn-htmlse15"> front </a> ] [ 
+<a href="http://lpn.swi-prolog.org/lpnpage.php?pagetype=html&amp;pageid=lpn-htmlch4"> up </a> ] </p>
+	    </div>
+	    <p class="indent">
+	      <a id="taillpn-htmlse15"> </a>
+	    </p>
+	  </div>
+	  <div class="foot"><div class="tracker">
+	    <div id="eXTReMe">
+	      <a href="http://extremetracking.com/open?login=lpntwo">
+		<img src="Learn%20Prolog%20Now!_files/i.gif" style="border: 0;" id="EXim" alt="eXTReMe Tracker" width="41" height="38">
+	      </a>
+	      <script type="text/javascript"><!--
+var EXlogin='lpntwo' // Login
+var EXvsrv='s11' // VServer
+EXs=screen;EXw=EXs.width;navigator.appName!="Netscape"?
+EXb=EXs.colorDepth:EXb=EXs.pixelDepth;
+navigator.javaEnabled()==1?EXjv="y":EXjv="n";
+EXd=document;EXw?"":EXw="na";EXb?"":EXb="na";
+EXd.write("<img src=http://e2.extreme-dm.com",
+"/"+EXvsrv+".g?login="+EXlogin+"&amp;",
+"jv="+EXjv+"&amp;j=y&amp;srw="+EXw+"&amp;srb="+EXb+"&amp;",
+"l="+escape(EXd.referrer)+" height=1 width=1>");//--></script><img src="Learn%20Prolog%20Now!_files/s11.gif" width="1" height="1">
+	      <noscript>
+		<div id="neXTReMe">
+		  <img
+		      height="1"
+		      width="1"
+		      alt=""
+		      src="http://e2.extreme-dm.com/s11.g?login=lpntwo&amp;j=n&amp;jv=n">
+		</div>
+	      </noscript>
+	    </div>
+	  </div>
+  © 2006-2012 <a href="http://www.patrickblackburn.org/">Patrick Blackburn</a>, <a href="http://www.let.rug.nl/bos/">Johan Bos</a>, <a href="http://cs.union.edu/~striegnk/">Kristina Striegnitz</a>
+  </div>
+	</td>
+      </tr>
+    </tbody></table>
+    <script>$(function() { $(".swish").LPN({swish:"https://swish.swi-prolog.org/"}); });</script>
+  
+<div id="overlay" style="display: none;"></div><div id="modal" style="display: none;"><div id="content"></div><a id="close" href="#">close</a></div></body></html>

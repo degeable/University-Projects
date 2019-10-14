@@ -1,0 +1,2 @@
+cat Jack\ Prelutsky\ -\ Be\ glad\ your\ nose\ is\ on\ your\ face.
+txt | tr -d ",.-" | tr [:upper:] [:lower:] | fmt -w 1 | sort | uniq -c | sort -g -r | head

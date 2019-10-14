@@ -1,0 +1,13 @@
+digraph G {
+      nodesep=1.5; ranksep=1.5;
+	  size="10,10";
+	  Idle [xlabel="creation"];
+	  Zombie [xlabel="termination"]; 
+      Idle -> Ready_to_Run;
+      Ready_to_Run -> On_Proc;
+	  On_Proc -> Sleep [label="block"];
+      On_Proc -> Ready_to_Run [label="preempted or time quantum expired"];
+      Sleep -> Ready_to_Run [label="wakeup"];
+      On_Proc -> Zombie [label="exit"];
+
+ }

@@ -1,0 +1,128 @@
+3.1
+
+PRacital sheet only some exercises... (do it in the vacation)
+
+3.2
+
+• ?- [a, X, a] = [Y, b, Y].  -> true Y=a, X=b
+• ?- [Y, c] = [c, Y | []].   -> Y=c
+• ?- [_, [] | [a, Y]] = [a, _, Z, b]. ->Z=a, Y=b
+• ?- [a | [b | T]] = [X, H | [c | [d]]]. -> X=a, H=b, T=[c,d] XXX T war falsch ich hatte zuerst T=c
+
+3.3
+
+a.)
+
+• What are the prenames of the parents with children Birgit, Hans and Elke?
+
+?- family(_,Y,Z,[birgit,hans,elke]).
+Y = uwe,
+Z = erika 
+
+• What are the children of family Mueller?
+
+?- family(mueller,_,_,X).
+X = [peter, susanne].
+
+• Which families have no children?
+
+?- family(X,_,_,[]).
+X = hoffmann.
+
+b.)
+
+b) Which families are covered by the following queries?
+• ?- family(Name,_,_,[_,_]). ->Name = mueller.
+• ?- family(Name,_,_,[]).    ->Name = hoffmann.
+
+c) Identify the names of families with
+• exactly 3 children.
+
+family(Name,_,_,[_,_,_]).
+Name = meier ;
+
+• at least 1 child.
+
+?- family(Name,_,_,[_|_]).
+Name = meier ;
+Name = mueller ;
+Name = schulz.
+
+• at least 2 children.
+
+?- family(Name,_,_,[_,_|_]).
+Name = meier ;
+Name = mueller ;
+Name = schulz.
+
+d) Identify the names of families with at most 2 children.
+
+?- family(Name,_,_,[]);family(Name,_,_,[_]);family(Name,_,_,[_,_]).
+Name = hoffmann ;
+Name = mueller ;
+
+3.4
+
+member(X,[X|T]).
+member(X,[H|T]) :- member(X,T).
+
+searchtree:
+
+        member(a,[b,X,a]).
+            /       
+       member(a,[b|X,a].
+          /
+      member(a,[X|a].
+        /
+     member(a,[a]. ->true   nicht ganz richtig denk ich mal
+
+
+[trace]  ?- member(a, [b, X, a]).
+   Call: (8) member(a, [b, _5398, a]) ? creep
+   Call: (9) member(a, [_5398, a]) ? creep
+   Exit: (9) member(a, [a, a]) ? creep
+   Exit: (8) member(a, [b, a, a]) ? creep
+X = a .
+
+3.5
+
+siehe prak3_ex3.5.pl
+
+3.6
+
+siehe prak3_ex3.5.pl
+
+if -> else ; then
+
+
+3.7
+
+delete scheint nicht zu laufen... auch nicht mit sebs lösung
+
+
+3.8
+
+siehe prak3_ex3.5.pl -> war eigentlich nicht zu schwer...
+
+3.9
+
+What happens if you query list_length(List,3)?
+List = [_2676, _2682, _2688].
+
+3.10
+
+siehe prak3_ex3.5.pl
+
+3.11
+
+siehe prak3_ex3.5.pl -
+
+3.12
+
+siehe prak3_ex3.5.pl -
+
+anmerkung N is N+1 geht nicht, man benötigt eine zwischenvariable
+
+
+
+

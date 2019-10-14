@@ -1,0 +1,6 @@
+1. # Funktioniert nicht...
+doubled(List,ACC):-
+    List=ACC->  true;
+    [H|T]=List,
+    doubled(T,[ACC|H]).
+doubled(X,X).

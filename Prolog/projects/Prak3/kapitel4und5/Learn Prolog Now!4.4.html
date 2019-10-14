@@ -1,0 +1,712 @@
+<!-- HEADER -->
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+  <title>Learn Prolog Now!</title>
+
+  <link href="Learn%20Prolog%20Now!4.4_files/lpn_reds2.css" rel="stylesheet" type="text/css">
+
+  </head>
+
+  <body>
+
+  <!-- table is needed because IE doesn't recognize min-width. -->
+  <table width="100%">
+  <tbody><tr><td><div style="width:500pt;"></div></td></tr>
+  <tr><td>
+
+  <div class="coloredbar"></div>
+  <div class="lpnheader">
+  <a href="http://www.learnprolognow.org/index.php">Learn Prolog Now!</a>
+  </div>
+
+  
+  <div class="authorbar">
+  by <a href="http://www.loria.fr/~blackbur/">Patrick Blackburn</a>, 
+     <a href="http://www.let.rug.nl/bos/">Johan Bos</a>, and 
+     <a href="http://cs.union.edu/~striegnk/">Kristina Striegnitz</a>
+  </div>
+
+<!-- NAVIGATION BAR -->
+  <div class="navbar">
+  <ul><li><a href="http://www.learnprolognow.org/lpnpage.php?pageid=top">LPN! Home</a></li><li><a href="http://www.learnprolognow.org/lpnpage.php?pageid=online">Free Online Version</a></li><li><a href="http://www.learnprolognow.org/lpnpage.php?pageid=handheld">Paperback English</a></li><li><a href="http://www.learnprolognow.org/lpnpage.php?pageid=french">Paperback Français</a></li><li><a href="http://www.learnprolognow.org/lpnpage.php?pageid=teaching">Teaching Prolog</a></li><li><a href="http://www.learnprolognow.org/lpnpage.php?pageid=implementations">Prolog Implementations</a></li><li><a href="http://www.learnprolognow.org/lpnpage.php?pageid=manuals">Prolog Manuals</a></li><li><a href="http://www.learnprolognow.org/lpnpage.php?pageid=links">Prolog Links</a></li><li><a href="http://www.learnprolognow.org/lpnpage.php?pageid=thanks">Thanks!</a></li><li><a href="http://www.learnprolognow.org/lpnpage.php?pageid=contact">Contact us</a></li></ul>  </div>
+
+
+<!-- MAIN CONTENT -->
+  <div class="content">
+
+  
+<!--l. 651--> 
+<div class="crosslinks"> 
+<p class="noindent"> [ 
+<a href="http://www.learnprolognow.org/lpnpage.php?pagetype=html&amp;pageid=lpn-htmlse17"> next 
+</a> ] [ 
+<a href="http://www.learnprolognow.org/lpnpage.php?pagetype=html&amp;pageid=lpn-htmlse15"> prev 
+</a> ] [ 
+<a href="http://www.learnprolognow.org/lpnpage.php?pagetype=html&amp;pageid=lpn-htmlse15"> prev-tail 
+</a> ] [ 
+<a href="http://www.learnprolognow.org/lpnpage.php?pagetype=html&amp;pageid=#taillpn-htmlse16"> tail 
+</a> ] [ 
+<a href="http://www.learnprolognow.org/lpnpage.php?pagetype=html&amp;pageid=lpn-htmlch4"> up 
+</a> ] 
+</p> 
+</div> 
+<h3 class="sectionHead"> 
+<span class="titlemark"> 4.4 
+</span> 
+<a id="x30-430004.4"> 
+</a> <strong>Exercise</strong>s 
+</h3> 
+<div class="newtheorem"> 
+<!--l. 653--> 
+<p class="noindent"> 
+<span class="head"> 
+<span class="cmbx-10"> <strong>Exercise</strong> 
+</span> 
+<span class="cmbx-10"> &nbsp;4.1 
+</span> 
+</span> 
+<a id="x30-430011"> 
+</a> 
+<span class="cmti-10"> How does Prolog respond to the following queries? 
+</span> 
+</p> 
+<ol class="enumerate1"> 
+<li class="enumerate" id="x30-43003x1"> 
+<span class="verb"> 
+<span class="cmtt-10"> [a,b,c,d] 
+</span> 
+<span class="cmtt-10"> &nbsp;= 
+</span> 
+<span class="cmtt-10"> &nbsp;[a,[b,c,d]]. 
+</span> 
+</span> 
+</li> 
+<li class="enumerate" id="x30-43005x2"> 
+<span class="verb"> 
+<span class="cmtt-10"> [a,b,c,d] 
+</span> 
+<span class="cmtt-10"> &nbsp;= 
+</span> 
+<span class="cmtt-10"> &nbsp;[a|[b,c,d]]. 
+</span> 
+</span> 
+</li> 
+<li class="enumerate" id="x30-43007x3"> 
+<span class="verb"> 
+<span class="cmtt-10"> [a,b,c,d] 
+</span> 
+<span class="cmtt-10"> &nbsp;= 
+</span> 
+<span class="cmtt-10"> &nbsp;[a,b,[c,d]]. 
+</span> 
+</span> 
+</li> 
+<li class="enumerate" id="x30-43009x4"> 
+<span class="verb"> 
+<span class="cmtt-10"> [a,b,c,d] 
+</span> 
+<span class="cmtt-10"> &nbsp;= 
+</span> 
+<span class="cmtt-10"> &nbsp;[a,b|[c,d]]. 
+</span> 
+</span> 
+</li> 
+<li class="enumerate" id="x30-43011x5"> 
+<span class="verb"> 
+<span class="cmtt-10"> [a,b,c,d] 
+</span> 
+<span class="cmtt-10"> &nbsp;= 
+</span> 
+<span class="cmtt-10"> &nbsp;[a,b,c,[d]]. 
+</span> 
+</span> 
+</li> 
+<li class="enumerate" id="x30-43013x6"> 
+<span class="verb"> 
+<span class="cmtt-10"> [a,b,c,d] 
+</span> 
+<span class="cmtt-10"> &nbsp;= 
+</span> 
+<span class="cmtt-10"> &nbsp;[a,b,c|[d]]. 
+</span> 
+</span> 
+</li> 
+<li class="enumerate" id="x30-43015x7"> 
+<span class="verb"> 
+<span class="cmtt-10"> [a,b,c,d] 
+</span> 
+<span class="cmtt-10"> &nbsp;= 
+</span> 
+<span class="cmtt-10"> &nbsp;[a,b,c,d,[]]. 
+</span> 
+</span> 
+</li> 
+<li class="enumerate" id="x30-43017x8"> 
+<span class="verb"> 
+<span class="cmtt-10"> [a,b,c,d] 
+</span> 
+<span class="cmtt-10"> &nbsp;= 
+</span> 
+<span class="cmtt-10"> &nbsp;[a,b,c,d|[]]. 
+</span> 
+</span> 
+</li> 
+<li class="enumerate" id="x30-43019x9"> 
+<span class="verb"> 
+<span class="cmtt-10"> [] 
+</span> 
+<span class="cmtt-10"> &nbsp;= 
+</span> 
+<span class="cmtt-10"> &nbsp;_. 
+</span> 
+</span> 
+</li> 
+<li class="enumerate" id="x30-43021x10"> 
+<span class="verb"> 
+<span class="cmtt-10"> [] 
+</span> 
+<span class="cmtt-10"> &nbsp;= 
+</span> 
+<span class="cmtt-10"> &nbsp;[_]. 
+</span> 
+</span> 
+</li> 
+<li class="enumerate" id="x30-43023x11"> 
+<span class="verb"> 
+<span class="cmtt-10"> [] 
+</span> 
+<span class="cmtt-10"> &nbsp;= 
+</span> 
+<span class="cmtt-10"> &nbsp;[_|[]]. 
+</span> 
+</span> 
+</li> 
+</ol> 
+</div> 
+<div class="newtheorem"> 
+<!--l. 668--> 
+<p class="noindent"> 
+<span class="head"> 
+<span class="cmbx-10"> <strong>Exercise</strong> 
+</span> 
+<span class="cmbx-10"> &nbsp;4.2 
+</span> 
+</span> 
+<a id="x30-430242"> 
+</a> 
+<span class="cmti-10"> Which of the following are syntactically correct lists? If the 
+</span> 
+<span class="cmti-10"> representation is correct, how many elements does the list have? 
+</span> 
+</p> 
+<!--l. 670--> 
+<p class="indent"> 
+</p> 
+<ol class="enumerate1"> 
+<li class="enumerate" id="x30-43026x1"> 
+<span class="verb"> 
+<span class="cmtt-10"> [1|[2,3,4]] 
+</span> 
+</span> 
+</li> 
+<li class="enumerate" id="x30-43028x2"> 
+<span class="verb"> 
+<span class="cmtt-10"> [1,2,3|[]] 
+</span> 
+</span> 
+</li> 
+<li class="enumerate" id="x30-43030x3"> 
+<span class="verb"> 
+<span class="cmtt-10"> [1|2,3,4] 
+</span> 
+</span> 
+</li> 
+<li class="enumerate" id="x30-43032x4"> 
+<span class="verb"> 
+<span class="cmtt-10"> [1|[2|[3|[4]]]] 
+</span> 
+</span> 
+</li> 
+<li class="enumerate" id="x30-43034x5"> 
+<span class="verb"> 
+<span class="cmtt-10"> [1,2,3,4|[]] 
+</span> 
+</span> 
+</li> 
+<li class="enumerate" id="x30-43036x6"> 
+<span class="verb"> 
+<span class="cmtt-10"> [[]|[]] 
+</span> 
+</span> 
+</li> 
+<li class="enumerate" id="x30-43038x7"> 
+<span class="verb"> 
+<span class="cmtt-10"> [[1,2]|4] 
+</span> 
+</span> 
+</li> 
+<li class="enumerate" id="x30-43040x8"> 
+<span class="verb"> 
+<span class="cmtt-10"> [[1,2],[3,4]|[5,6,7]] 
+</span> 
+</span> 
+</li> 
+</ol> 
+</div> 
+<div class="newtheorem"> 
+<!--l. 687--> 
+<p class="noindent"> 
+<span class="head"> 
+<span class="cmbx-10"> <strong>Exercise</strong> 
+</span> 
+<span class="cmbx-10"> &nbsp;4.3 
+</span> 
+</span> 
+<a id="x30-430413"> 
+</a> 
+<span class="cmti-10"> Write a predicate 
+</span> 
+<span class="verb"> 
+<span class="cmtt-10"> second(X,List) 
+</span> 
+</span> 
+<span class="cmti-10"> which checks whether 
+</span> 
+<span class="verb"> 
+<span class="cmtt-10"> X 
+</span> 
+</span> 
+<span class="cmti-10"> is 
+</span> 
+<span class="cmti-10"> the second element of 
+</span> 
+<span class="verb"> 
+<span class="cmtt-10"> List 
+</span> 
+</span> 
+<span class="cmti-10"> . 
+</span> 
+</p> 
+</div> 
+<div class="newtheorem"> 
+<!--l. 693--> 
+<p class="noindent"> 
+<span class="head"> 
+<span class="cmbx-10"> <strong>Exercise</strong> 
+</span> 
+<span class="cmbx-10"> &nbsp;4.4 
+</span> 
+</span> 
+<a id="x30-430424"> 
+</a> 
+<span class="cmti-10"> Write a predicate 
+</span> 
+<span class="verb"> 
+<span class="cmtt-10"> swap12(List1,List2) 
+</span> 
+</span> 
+<span class="cmti-10"> which checks whether 
+</span> 
+<span class="verb"> 
+<span class="cmtt-10"> List1 
+</span> 
+</span> 
+<span class="cmti-10"> is identical to 
+</span> 
+<span class="verb"> 
+<span class="cmtt-10"> List2 
+</span> 
+</span> 
+<span class="cmti-10"> , except that the first two elements are exchanged. 
+</span> 
+</p> 
+</div> 
+<div class="newtheorem"> 
+<!--l. 700--> 
+<p class="noindent"> 
+<span class="head"> 
+<span class="cmbx-10"> <strong>Exercise</strong> 
+</span> 
+<span class="cmbx-10"> &nbsp;4.5 
+</span> 
+</span> 
+<a id="x30-430435"> 
+</a> 
+<span class="cmti-10"> Suppose we are given a knowledge base with the following facts: 
+</span> 
+</p> 
+<!--l. 702--> 
+<p class="indent"> 
+</p> 
+<div class="fancyvrb" id="fancyvrb217"> 
+<a id="x30-43045r1"> 
+</a> 
+<span class="cmtt-10"> &nbsp; 
+</span> 
+<span class="cmtt-10"> &nbsp;tran(eins,one). 
+</span> 
+<br class="fancyvrb"> 
+<a id="x30-43047r2"> 
+</a> 
+<span class="cmtt-10"> &nbsp; 
+</span> 
+<span class="cmtt-10"> &nbsp;tran(zwei,two). 
+</span> 
+<br class="fancyvrb"> 
+<a id="x30-43049r3"> 
+</a> 
+<span class="cmtt-10"> &nbsp; 
+</span> 
+<span class="cmtt-10"> &nbsp;tran(drei,three). 
+</span> 
+<br class="fancyvrb"> 
+<a id="x30-43051r4"> 
+</a> 
+<span class="cmtt-10"> &nbsp; 
+</span> 
+<span class="cmtt-10"> &nbsp;tran(vier,four). 
+</span> 
+<br class="fancyvrb"> 
+<a id="x30-43053r5"> 
+</a> 
+<span class="cmtt-10"> &nbsp; 
+</span> 
+<span class="cmtt-10"> &nbsp;tran(fuenf,five). 
+</span> 
+<br class="fancyvrb"> 
+<a id="x30-43055r6"> 
+</a> 
+<span class="cmtt-10"> &nbsp; 
+</span> 
+<span class="cmtt-10"> &nbsp;tran(sechs,six). 
+</span> 
+<br class="fancyvrb"> 
+<a id="x30-43057r7"> 
+</a> 
+<span class="cmtt-10"> &nbsp; 
+</span> 
+<span class="cmtt-10"> &nbsp;tran(sieben,seven). 
+</span> 
+<br class="fancyvrb"> 
+<a id="x30-43059r8"> 
+</a> 
+<span class="cmtt-10"> &nbsp; 
+</span> 
+<span class="cmtt-10"> &nbsp;tran(acht,eight). 
+</span> 
+<br class="fancyvrb"> 
+<a id="x30-43061r9"> 
+</a> 
+<span class="cmtt-10"> &nbsp; 
+</span> 
+<span class="cmtt-10"> &nbsp;tran(neun,nine). 
+</span> 
+</div> 
+<!--l. 716--> 
+<p class="indent"> 
+<span class="cmti-10"> Write a predicate 
+</span> 
+<span class="verb"> 
+<span class="cmtt-10"> listtran(G,E) 
+</span> 
+</span> 
+<span class="cmti-10"> which translates a list of German number words 
+</span> 
+<span class="cmti-10"> to the corresponding list of English number words. For example: 
+</span> 
+</p> 
+<div class="fancyvrb" id="fancyvrb218"> 
+<a id="x30-43063r1"> 
+</a> 
+<span class="cmtt-10"> &nbsp; 
+</span> 
+<span class="cmtt-10"> &nbsp;listtran([eins,neun,zwei],X). 
+</span> 
+</div> 
+<!--l. 722--> 
+<p class="noindent"> 
+<span class="cmti-10"> should give: 
+</span> 
+</p> 
+<div class="fancyvrb" id="fancyvrb219"> 
+<a id="x30-43065r1"> 
+</a> 
+<span class="cmtt-10"> &nbsp; 
+</span> 
+<span class="cmtt-10"> &nbsp;X 
+</span> 
+<span class="cmtt-10"> &nbsp;= 
+</span> 
+<span class="cmtt-10"> &nbsp;[one,nine,two]. 
+</span> 
+</div> 
+<!--l. 727--> 
+<p class="indent"> 
+<span class="cmti-10"> Your program should also work in the other direction. For example, if you give it 
+</span> 
+<span class="cmti-10"> the query 
+</span> 
+</p> 
+<div class="fancyvrb" id="fancyvrb220"> 
+<a id="x30-43067r1"> 
+</a> 
+<span class="cmtt-10"> &nbsp; 
+</span> 
+<span class="cmtt-10"> &nbsp;listtran(X,[one,seven,six,two]). 
+</span> 
+</div> 
+<!--l. 732--> 
+<p class="noindent"> 
+<span class="cmti-10"> it should return: 
+</span> 
+</p> 
+<div class="fancyvrb" id="fancyvrb221"> 
+<a id="x30-43069r1"> 
+</a> 
+<span class="cmtt-10"> &nbsp; 
+</span> 
+<span class="cmtt-10"> &nbsp;X 
+</span> 
+<span class="cmtt-10"> &nbsp;= 
+</span> 
+<span class="cmtt-10"> &nbsp;[eins,sieben,sechs,zwei]. 
+</span> 
+</div> 
+<!--l. 738--> 
+<p class="indent"> 
+<span class="cmti-10"> (Hint: to answer this question, first ask yourself “How do I translate the 
+</span> empty 
+<span class="cmti-10"> list of number words?”. That’s the base case. For non-empty lists, first translate the 
+</span> 
+<span class="cmti-10"> head of the list, then use recursion to translate the tail.) 
+</span> 
+</p> 
+</div> 
+<div class="newtheorem"> 
+<!--l. 745--> 
+<p class="noindent"> 
+<span class="head"> 
+<span class="cmbx-10"> <strong>Exercise</strong> 
+</span> 
+<span class="cmbx-10"> &nbsp;4.6 
+</span> 
+</span> 
+<a id="x30-430706"> 
+</a> 
+<span class="cmti-10"> Write a predicate 
+</span> 
+<span class="verb"> 
+<span class="cmtt-10"> twice(In,Out) 
+</span> 
+</span> 
+<span class="cmti-10"> whose left argument is a list, and 
+</span> 
+<span class="cmti-10"> whose right argument is a list consisting of every element in the left list written twice. 
+</span> 
+<span class="cmti-10"> For example, the query 
+</span> 
+</p> 
+<div class="fancyvrb" id="fancyvrb222"> 
+<a id="x30-43072r1"> 
+</a> 
+<span class="cmtt-10"> &nbsp; 
+</span> 
+<span class="cmtt-10"> &nbsp;twice([a,4,buggle],X). 
+</span> 
+</div> 
+<!--l. 752--> 
+<p class="noindent"> 
+<span class="cmti-10"> should return 
+</span> 
+</p> 
+<div class="fancyvrb" id="fancyvrb223"> 
+<a id="x30-43074r1"> 
+</a> 
+<span class="cmtt-10"> &nbsp; 
+</span> 
+<span class="cmtt-10"> &nbsp;X 
+</span> 
+<span class="cmtt-10"> &nbsp;= 
+</span> 
+<span class="cmtt-10"> &nbsp;[a,a,4,4,buggle,buggle]). 
+</span> 
+</div> 
+<!--l. 756--> 
+<p class="noindent"> 
+<span class="cmti-10"> And the query 
+</span> 
+</p> 
+<div class="fancyvrb" id="fancyvrb224"> 
+<a id="x30-43076r1"> 
+</a> 
+<span class="cmtt-10"> &nbsp; 
+</span> 
+<span class="cmtt-10"> &nbsp;twice([1,2,1,1],X). 
+</span> 
+</div> 
+<!--l. 760--> 
+<p class="noindent"> 
+<span class="cmti-10"> should return 
+</span> 
+</p> 
+<div class="fancyvrb" id="fancyvrb225"> 
+<a id="x30-43078r1"> 
+</a> 
+<span class="cmtt-10"> &nbsp; 
+</span> 
+<span class="cmtt-10"> &nbsp;X 
+</span> 
+<span class="cmtt-10"> &nbsp;= 
+</span> 
+<span class="cmtt-10"> &nbsp;[1,1,2,2,1,1,1,1]. 
+</span> 
+</div> 
+<!--l. 765--> 
+<p class="indent"> 
+<span class="cmti-10"> (Hint: to answer this question, first ask yourself “What should happen when the 
+</span> 
+<span class="cmti-10"> first argument is the 
+</span> empty 
+<span class="cmti-10"> list?”. That’s the base case. For non-empty lists, think 
+</span> 
+<span class="cmti-10"> about what you should do with the head, and use recursion to handle the 
+</span> 
+<span class="cmti-10"> tail.) 
+</span> 
+</p> 
+</div> 
+<div class="newtheorem"> 
+<!--l. 772--> 
+<p class="noindent"> 
+<span class="head"> 
+<span class="cmbx-10"> <strong>Exercise</strong> 
+</span> 
+<span class="cmbx-10"> &nbsp;4.7 
+</span> 
+</span> 
+<a id="x30-430797"> 
+</a> 
+<span class="cmti-10"> Draw the search trees for the following three queries: 
+</span> 
+</p> 
+<!--l. 774--> 
+<p class="indent"> 
+</p> 
+<div class="fancyvrb" id="fancyvrb226"> 
+<a id="x30-43081r1"> 
+</a> 
+<span class="cmtt-10"> &nbsp; 
+</span> 
+<span class="cmtt-10"> &nbsp;?- 
+</span> 
+<span class="cmtt-10"> &nbsp;member(a,[c,b,a,y]). 
+</span> 
+<br class="fancyvrb"> 
+<a id="x30-43083r2"> 
+</a> 
+<span class="cmtt-10"> &nbsp; 
+</span> 
+<span class="cmtt-10"> &nbsp; 
+</span> 
+<br class="fancyvrb"> 
+<a id="x30-43085r3"> 
+</a> 
+<span class="cmtt-10"> &nbsp; 
+</span> 
+<span class="cmtt-10"> &nbsp;?- 
+</span> 
+<span class="cmtt-10"> &nbsp;member(x,[a,b,c]). 
+</span> 
+<br class="fancyvrb"> 
+<a id="x30-43087r4"> 
+</a> 
+<span class="cmtt-10"> &nbsp; 
+</span> 
+<span class="cmtt-10"> &nbsp; 
+</span> 
+<br class="fancyvrb"> 
+<a id="x30-43089r5"> 
+</a> 
+<span class="cmtt-10"> &nbsp; 
+</span> 
+<span class="cmtt-10"> &nbsp;?- 
+</span> 
+<span class="cmtt-10"> &nbsp;member(X,[a,b,c]). 
+</span> 
+<br class="fancyvrb"> 
+<a id="x30-43091r6"> 
+</a> 
+<span class="cmtt-10"> &nbsp; 
+</span> 
+<span class="cmtt-10"> &nbsp; 
+</span> 
+</div> 
+<!--l. 782--> 
+<p class="noindent"> 
+<span class="cmti-10"> (Search trees were introduced in Chapter 
+</span> 
+<span class="cmti-10"> &nbsp; 
+</span> 
+<a href="http://www.learnprolognow.org/lpnpage.php?pagetype=html&amp;pageid=lpn-htmlch2"> 
+<span class="cmti-10"> 2 
+</span> 
+<!--tex4ht:ref: CHAPTER2 --> 
+</a> 
+<span class="cmti-10"> .) 
+</span> 
+</p> 
+</div> 
+<!--l. 786--> 
+<div class="crosslinks"> 
+<p class="noindent"> [ 
+<a href="http://www.learnprolognow.org/lpnpage.php?pagetype=html&amp;pageid=lpn-htmlse17"> next 
+</a> ] [ 
+<a href="http://www.learnprolognow.org/lpnpage.php?pagetype=html&amp;pageid=lpn-htmlse15"> prev 
+</a> ] [ 
+<a href="http://www.learnprolognow.org/lpnpage.php?pagetype=html&amp;pageid=lpn-htmlse15"> prev-tail 
+</a> ] [ 
+<a href="http://www.learnprolognow.org/lpnpage.php?pagetype=html&amp;pageid=lpn-htmlse16"> front 
+</a> ] [ 
+<a href="http://www.learnprolognow.org/lpnpage.php?pagetype=html&amp;pageid=lpn-htmlch4"> up 
+</a> ] 
+</p> 
+</div> 
+<!--l. 786--> 
+<p class="indent"> 
+<a id="taillpn-htmlse16"> 
+</a> 
+</p> 
+  </div>
+
+
+<!-- FOOTER -->
+  <div class="foot">
+<div class="tracker">
+<div id="eXTReMe"><a href="http://extremetracking.com/open?login=lpntwo">
+<img src="Learn%20Prolog%20Now!4.4_files/i.gif" style="border: 0;" id="EXim" alt="eXTReMe Tracker" width="41" height="38"></a>
+<script type="text/javascript"><!--
+var EXlogin='lpntwo' // Login
+var EXvsrv='s11' // VServer
+EXs=screen;EXw=EXs.width;navigator.appName!="Netscape"?
+EXb=EXs.colorDepth:EXb=EXs.pixelDepth;
+navigator.javaEnabled()==1?EXjv="y":EXjv="n";
+EXd=document;EXw?"":EXw="na";EXb?"":EXb="na";
+EXd.write("<img src=http://e2.extreme-dm.com",
+"/"+EXvsrv+".g?login="+EXlogin+"&amp;",
+"jv="+EXjv+"&amp;j=y&amp;srw="+EXw+"&amp;srb="+EXb+"&amp;",
+"l="+escape(EXd.referrer)+" height=1 width=1>");//-->
+</script><img src="Learn%20Prolog%20Now!4.4_files/s11.gif" width="1" height="1"><noscript><div id="neXTReMe"><img height="1" width="1" alt=""
+src="http://e2.extreme-dm.com/s11.g?login=lpntwo&amp;j=n&amp;jv=n" />
+</div></noscript></div>
+</div>
+  © 2006-2012 <a href="http://www.patrickblackburn.org/">Patrick Blackburn</a>, <a href="http://www.let.rug.nl/bos/">Johan Bos</a>, <a href="http://cs.union.edu/~striegnk/">Kristina Striegnitz</a>
+  </div>
+
+  </td></tr></tbody></table>
+
+
+  
+
+
+</body></html>

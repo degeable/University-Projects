@@ -1,0 +1,42 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package terminverwaltung;
+import java.util.ArrayList;
+
+
+
+/**
+ *
+ * @author istkastra
+ */
+public class Austattungsverwaltung {
+    private ArrayList<Ausstattung> Austattungsliste;
+
+    /**
+     * @return the Austattungsliste
+     */
+    public ArrayList<Ausstattung> getAustattungsliste() {
+        return Austattungsliste;
+    }
+
+    /**
+     * @param Austattungsliste the Austattungsliste to set
+     */
+    public void setAustattungsliste(ArrayList<Ausstattung> Austattungsliste) {
+        this.Austattungsliste = Austattungsliste;
+    }
+
+    public Austattungsverwaltung() {
+    
+    
+    }
+    public void createEquip(){
+        Ausstattung newEquipment = new Ausstattung();
+      // newEquipment.setBeamer(beamer);
+       
+    }
+    
+}

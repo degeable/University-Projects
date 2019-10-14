@@ -1,0 +1,31 @@
+rules in eigener file
+rules eilesen
+fragen speichern
+fragen wieder löschen
+
+build in preds:
+
+format
+bagof?
+
+
+
+Fragen:
+
+What is my drink? drink(x)
+What is <drink> made of? ingredient(drink(x))
+Why is my drink called <Milk>
+Give me a fun fact about <Drink>
+
+Menü:
+
+Hello! I am Beaver.
+You can ask me Questions about Drinks.
+I know most attributes and ingridients of
+the most common drinks.
+Type in help. to see what Kind of questions you can ask.
+
+But first of all i want to know your name!
+>input(name)
+>assert(name)
+

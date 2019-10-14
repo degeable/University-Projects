@@ -1,0 +1,25 @@
+--- mylistIndent.cpp	2019-02-27 18:54:22.885248000 +0100
++++ fixed.cpp	2019-02-28 10:03:33.891799629 +0100
+@@ -71,6 +71,8 @@
+ }
+ 
+ 
++
++
+ int
+ main ()
+ {
+@@ -80,6 +82,13 @@
+     {
+       cout << "Please enter an integer value (negative value = quit): ";
+       cin >> input;
++	  while(cin.fail()) {
++        cout << "Error: thats not an integer value! Try again" <<endl;
++		cout << "Please enter an integer value (negative value = quit): ";
++        cin.clear();
++        cin.ignore(256,'\n');
++        cin >> input;
++    }
+       if (input >= 0)
+ 	insert (input);
+     }

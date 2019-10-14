@@ -1,0 +1,47 @@
+3.1
+
+  a eingeben 7
+
+  Wurzel von 7 = 2.64577 nach 4 Schritten
+
+RUN FINISHED; exit value 0; real time: 3s; user: 0ms; system: 0ms
+
+  a eingeben 67
+
+  Wurzel von 67 = 8.18536 nach 6 Schritten
+
+RUN FINISHED; exit value 0; real time: 1s; user: 0ms; system: 0ms
+
+  a eingeben 678
+
+  Wurzel von 678 = 26.0384 nach 8 Schritten
+
+RUN FINISHED; exit value 0; real time: 2s; user: 0ms; system: 0ms
+
+ a eingeben 6896
+
+  Wurzel von 6896 = 83.0422 nach 10 Schritten
+
+RUN FINISHED; exit value 0; real time: 3s; user: 0ms; system: 0ms
+
+-> Je größer die Zahl, desto mehr schritte.
+-> Es befinden sich 3 Ordner (build,dist,nbproject), die main.cpp und die Makefile in dem Ordner
+
+4.1
+Aufgabe 2
+In den Zeilen 12,16,27,28 gibt die Konsole etwas aus und der Befehl dafür lautet "cout<<"
+in Zeile 20 bis 24 werden die einzelnen Schritte ausgeführt, bis die Genauigkeitsbedingung erfüllt ist.
+
+Aufgabe 3
+
+Eingabe 567
+
+x1=567
+x2=284
+x3=142.99
+x4=73.48
+x5=40.59
+x6=27.28
+x7=24.03
+x8=23.81
+

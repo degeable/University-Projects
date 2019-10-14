@@ -1,0 +1,6 @@
+Frankfurt jahresdurchschnitt 2010: 9.83775
+Frankfurt jahresdurchschnitt 2011: 11.4902
+Frankfurt jahresdurchschnitt 2012: 10.969
+Hamburg jahresdurchschnitt 2010: 8.22505
+Hamburg jahresdurchschnitt 2011: 10.0533
+Hamburg jahresdurchschnitt 2012: 9.36385

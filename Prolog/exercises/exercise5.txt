@@ -1,0 +1,10 @@
+nur gelesen, aufgaben ausgelassen für klausurvorbereitung
+
+
+5.3
+
+addone([],[]).
+
+addone([X|List1],[Y|List2]):-
+    Y is X+1,   
+    addone(List1,List2).

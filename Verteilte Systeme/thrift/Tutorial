@@ -1,0 +1,9 @@
+https://wiki.apache.org/thrift/ThriftUsageC%2B%2B
+
+
+
+da die makefile irgendwie nicht läuft:
+
+g++ -std=c++11 getDataService_server.cpp -o thrift_server -I/usr/local/include/thrift -I/usr/local/include/ -lthrift -lstdc++ -Wall -DHAVE_INTTYPES_H -DHAVE_NETINET_IN_H -L/usr/local/lib getDataService.cpp getDataService_constants.cpp getDataService_types.cpp -L/usr/local/lib/libthrift.so
+
+g++ Thrift_client.cpp -o thrift_client -I/usr/local/include/thrift -I/usr/local/include/ -lthrift -lstdc++ -Wall -DHAVE_INTTYPES_H -DHAVE_NETINET_IN_H -L/usr/local/lib getDataService.cpp getDataService_constants.cpp getDataService_types.cpp -L/usr/local/lib/libthrift.so

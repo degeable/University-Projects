@@ -1,0 +1,38 @@
+4.1
+
+all queues where is a | is true because it treaats it all as one list []=_. is also true
+
+4.2
+
+
+
+    [1|[2,3,4]] correct, 4 elements
+    [1,2,3|[]] correct, 4 elements: last one is an empty list
+    [1|2,3,4]  false
+    [1|[2|[3|[4]]]] true, 4 elements
+    [1,2,3,4|[]] true, 4 elements, empty list as tail of the 4 results in just the 4
+    [[]|[]] true, one emelent: empty list in the list
+    [[1,2]|4] false: list expected found INT 4
+    [[1,2],[3,4]|[5,6,7]] true, 5 emelents X = [[1, 2], [3, 4], 5, 6, 7].
+
+4.3
+
+siehe exercise4.4.pl
+
+4.4
+
+siehe exercise4.4.pl
+
+4.5
+
+siehe exercise4.4.pl
+
+-> reverse translation ausgelassen....
+
+4.6
+
+siehe exercise4.4.pl
+
+-> falsch
+
+Rest ausgelassen für Klausurvorbereitung...

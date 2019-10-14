@@ -1,0 +1,74 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package terminverwaltung;
+
+import java.util.concurrent.atomic.AtomicInteger;
+
+/**
+ *
+ * @author Khanh
+ */
+public class Nutzer {
+    
+    private static final AtomicInteger count = new AtomicInteger(0); // used to create an unique user id
+    
+    private String vorname;
+    private String nachname;
+    private int userId;
+
+    public Nutzer(String inputVorname, String inputNachname) {
+        
+        vorname = inputVorname;
+        nachname = inputNachname;
+        userId = count.incrementAndGet();
+    }
+    
+    
+    
+    /**
+     * @return the vorname
+     */
+    public String getVorname() {
+        return vorname;
+    }
+
+    /**
+     * @param vorname the vorname to set
+     */
+    public void setVorname(String vorname) {
+        this.vorname = vorname;
+    }
+
+    /**
+     * @return the nachname
+     */
+    public String getNachname() {
+        return nachname;
+    }
+
+    /**
+     * @param nachname the nachname to set
+     */
+    public void setNachname(String nachname) {
+        this.nachname = nachname;
+    }
+
+    /**
+     * @return the userId
+     */
+    public int getUserId() {
+        return userId;
+    }
+    
+    
+    
+    
+    
+    
+    
+            
+    
+}

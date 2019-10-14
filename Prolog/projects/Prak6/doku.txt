@@ -1,0 +1,105 @@
+6.2 
+a)
+
+1. Initial State
+	
+	- hree Rods (A,B,C)
+	- N disks with different sizes
+	- all disks are stacked in rod A low to higj
+	
+2. Possible Actions
+	
+	- Move one disk at a time
+	- you cant put a larger disk onto a smaller one
+	
+3. what each action does
+
+	- a Move consists of taking one disk and put it on top of anoteher rod (or sack)
+	
+4. goal test
+
+	- goal is reached when all disks are on rod C beginning with the largest one
+	- 
+	
+5. path cost function
+
+	- IDK
+	
+b)
+
+cant find any heuristics to be honest
+
+
+bakcup:
+
+moveA2B(NodeBefore,NodeAfter):-
+    arg(1,NodeBefore,StateBefore), 
+    arg(1,NodeAfter,StateAfter), 
+    arg(2,NodeBefore,Fb),
+    arg(2,NodeAfter,Fa),
+    arg(3,NodeBefore,Gb),
+    arg(3,NodeAfter,Ga),
+    arg(4,NodeBefore,Hb),
+    arg(4,NodeAfter,Ha),
+    arg(5,NodeBefore,PathBefore),
+    arg(5,NodeAfter,PathAfter),
+    valid_state(StateBefore),
+    valid_state(StateAfter),
+    StateBefore=..StateBeforeList,
+    StateAfter=..StateAfterList,
+    StateBeforeList = [_,[BeforeHead|_]|BeforeTail],
+    StateAfterList = [_,_,[AfterHead|_]|AfterTail],
+    BeforeHead =:= AfterHead,
+    Ga=:=Gb+1,
+    Ha=:=0,
+    Fa=:=Ga+Ha,
+    append(PathBefore,[ab],RightPath),
+    PathAfter=RightPath.
+
+successor_nodes(Node, ListOfSuccessors):-
+    (moveA2B(Node,X) ->
+        append(ListOfSuccessors,"moveA2B",NewSucc),successor_nodes(X,NewSucc)
+    ;   (moveA2C(Node,X) ->
+            append(ListOfSuccessors,"moveA2C",NewSucc),successor_nodes(X,NewSucc)
+        ;  (moveB2C(Node,X) ->
+                append(ListOfSuccessors,"moveB2A",NewSucc),successor_nodes(X,NewSucc)
+            ;  (moveB2A(Node,X) ->
+                    append(ListOfSuccessors,"moveB2C",NewSucc),successor_nodes(X,NewSucc)
+                ;  (moveC2A(Node,X) ->
+                        append(ListOfSuccessors,"moveC2A",NewSucc),successor_nodes(X,NewSucc)
+                    ;  (moveC2B(Node,X) ->
+                            append(ListOfSuccessors,"moveC2B",NewSucc),successor_nodes(X,NewSucc)
+                        ; write("placeholder")
+                        )
+                    )
+                )
+            )
+        )
+    ),
+    final_node(X).
+
+
+successor_nodes(Node, ListOfSuccessors):-
+   (final_node(Node)
+    -> write(Node)
+  ;  (moveA2B(Node,X) ->
+    	successor_nodes(X,NewSucc)
+    ;   (moveA2C(Node,X) ->
+         	successor_nodes(X,NewSucc)
+        ;  (moveB2C(Node,X) ->
+                successor_nodes(X,NewSucc)
+            ;  (moveB2A(Node,X) ->
+                    successor_nodes(X,NewSucc)
+                ;  (moveC2A(Node,X) ->
+                        successor_nodes(X,NewSucc)
+                    ;  (moveC2B(Node,X) ->
+                           successor_nodes(X,NewSucc)
+                        ; write("placeholder")
+                        )
+                    )
+                )
+            )
+        )
+    )
+ ).
+

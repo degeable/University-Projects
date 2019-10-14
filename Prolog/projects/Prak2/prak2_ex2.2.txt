@@ -1,0 +1,10 @@
+
+correct_dance(stop).
+correct_dance(left(X)):- correct_dance(X).
+correct_dance(right(X)):- correct_dance(X).
+correct_dance(forward(X)):- correct_dance(X).
+correct_dance(backward(X)):- correct_dance(X).
+correct_dance(leftTurn(X)):- correct_dance(X).
+correct_dance(rightTurn(X)):- correct_dance(X).
+
+

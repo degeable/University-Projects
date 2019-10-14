@@ -1,0 +1,62 @@
+Sprudel Wasser: Klar, nur eine Zutat, Kohlensäure, kalt
+Stilles wasser: Klar, nur eine Zutat, Keine Kohlensäure, kalt
+Cola: Nicht Klar, Schwarz, Kohlensäure, süß, mehr als eine Zutat, kalt, chemicals and sugar
+Fanta: Nicht klar, gelb, Kohlensäure, süß, mehr als eine Zutat, kalt, chemicals and sugar
+Sprite:  Klar, Kohlensäure, süß, mehr als eine Zutat, kalt, chemicals and sugar
+Tee/kräuter: farbig, nicht süß, heiß, mehr als eine Zutat, Brew, slightly green, kräuter und wasser
+Tee/früchte: farbig, nicht süß, heiß, mehr als eine Zutat, Brew, slightly red, früchte und wasser
+Bier: farbig, bitter, kohlensäure, alkohololisch, kalt, mehr als eine Zutat, leicht gelblich, aus hopfen,getreide, wasser
+schnaps:
+-> vodka: Klar, alhoholisch, mehr als eine zutat, Kalt, keine Kohlensäure, aus kartoffeln
+-> whiskey: farbig, braun, alkoholisch, mehr als eine Zutat, kalt, keine kohlensäure, aus weizen
+-> Kräuterschnaps schwarz, alkoholisch, mehr als eine zutat, süßlich, kalt verschiedenen kärutern
+-> Gin: farbig, braun, alkoholisch, mehr als eine Zutat, kalt, keine kohlensäure, aus weizen, verschiedenen beeren und kräutern
+likör... ? alkoholisch, süß, 
+Rotwein: kalt, rötlich, mehr als eine Zutat?, keine Kohlensäure, bitter, alkoholisch, trauben
+Weißwein kalt, durchsichtig, mehr als eine zutat?, keine kohlensäure, bitter, alkoholisch, trauben
+weinschorle: wein + Sprudelwasser 
+Mixbier: bier plus limo
+Longdrink: schnaps + limo 
+Saft:
+-> Osaft: gelb, süß, ohne kohlensäure, zutat orangen, kalt, natürliche bestandteile, nicht alkoholisch 
+-> multi: orange, süß, ohne kohlensäure, zutat obstsorten, kalt, natürliche bestandteile, nicht alkoholisch 
+-> Kirschsaft:  orange, süß, ohne kohlensäure, zutat obstsorten, kalt, natürliche bestandteile, nicht alkoholisch 
+
+kaffee: heiß, brew, nur eine zutat neben wasser, bitter, non alk, enthält milch?
+kakao: milchh + süß 
+milch: tierisch, kalt, keine kohlensäure, weiß, nicht süß 
+
+
+oberklassen:
+
+			/ Farblos
+Alkohol: -/
+			\ 	/ 
+			 Farbig
+				\
+				  Durchsichtig
+
+
+
+Frage:
+aus der und der zutat? hopfen, kartoffel, kräutern, früchten
+vom tier? milch kakao
+Farbe
+kohlensäure
+durchsichtig
+gemischt (longdrinks)
+temperatur
+alkoholgehalt
+süß
+sauer
+bitter
+mehr als eine zutat neben wasser
+
+
+
+Features:
+
+name
+
+sätze als fragen
+

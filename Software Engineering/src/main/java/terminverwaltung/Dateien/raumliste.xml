@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<raumliste> 
+    <raum location="D14/0.13" plaetze="20">Sitzungsraum 1</raum>
+    <raum location="D14/0.15" plaetze="15">Seminarraum 1</raum>
+    <raum location="D14/4.05" plaetze="10">Sitzungsraum 2</raum>
+    <raum location="D15/0.07" plaetze="15">Seminarraum 2</raum>
+</raumliste>

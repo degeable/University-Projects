@@ -1,0 +1,39 @@
+funfact(cola,D):-
+	send(D,destroy),
+	show_fact("The CocaCola company was the biggste company untill 2001").
+	
+funfact(_,D):-
+	send(D,destroy),
+	show_fact("Sorry no fact found for this drink!").
+
+drink(soda_water,_):-
+	true.
+	
+drink(water,_):-
+	true.
+	
+drink(cola,_):-
+	true.
+
+
+drink(sparkling_water):-
+    is(sparkling),
+    has(clear,color),
+    %not(has(alcohol,"")),
+    is(cold),
+    %not(tastes("",sweet)),
+    %not(is(organic)),
+    %not(is(brewage)),
+    made_of(water),
+    !.
+
+drink(water):-
+    %not(is(sparkling)),
+    has(clear,color),
+    %not(has(alcohol,"")),
+    is(cold),
+    %not(tastes("",sweet)),
+    %not(is(organic)),
+    %not(is(brewage)),
+    made_of(water),
+    !.

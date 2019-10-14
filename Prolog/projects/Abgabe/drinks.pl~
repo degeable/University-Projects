@@ -1,0 +1,54 @@
+:-consult('drink.rules').
+:- dynamic (known/2).
+:- dynamic (known/5).
+
+
+%ask(ATTR):- 
+ % known(yes, ATTR), 
+ % !. 
+
+ask(BEGINN,VAL,ATTR,COND):- 
+  known(yes, BEGINN,VAL,ATTR,COND), 
+  !. 
+
+%ask(ATTR):- 
+ % known(_,ATTR),  % fail if false 
+  %!, 
+  %fail. 
+
+ask(BEGINN,VAL,ATTR,COND):- 
+  known(_,BEGINN,VAL,ATTR,COND),  % fail if false 
+  !, 
+  fail. 
+
+
+%ask(ATTR):-
+ %   format("Is your Drink considert a ~w Drink?\n",[ATTR]),
+  %  read(X),
+   % asserta(known(X,ATTR)),
+   % X == yes.
+
+    
+
+ask(BEGINN,VAL,ATTR,COND):-
+    format("~w your Drink ~w ~w ~w?\n",[BEGINN,VAL,ATTR,COND]),
+    read(X),
+    asserta(known(X,BEGINN,VAL,ATTR,COND)),
+    X == yes. 
+
+
+made_of(ATTR):-
+    ask(is,"mostly made",of,ATTR).
+
+has(ATTR,COND):-
+    ask(does,has,ATTR,COND).
+
+%has(ATTR):-
+ %   ask(does,has,ATTR,"").  
+
+tastes(COND,ATTR):-
+    ask(tastes,"",ATTR,COND).
+
+is(ATTR):-
+    ask(is,"considert a",ATTR,drink).
+

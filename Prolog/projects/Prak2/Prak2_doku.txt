@@ -1,0 +1,60 @@
+for 2.1
+
+See in exercise folder... some are unsolved
+
+2.2
+ 
+• donut and croissant  -> NO
+• animal(X) and animal(toto) -> YES X=toto.
+• Food and 'food'   -> YES Food= food.
+• tasty and 'tasty' -> YES
+• good(pizza, Y) and good(X, salami) -> YES Y=salami, X=pizza.
+• f(a, X, Y) and f(X, Y, b) -> NO
+• plus(sqr(a), X) and plus(sqr(Y), mult(b, Y)) -> YES X=mult(b,a), Y=a.
+
+2.3 
+
+siehe programm, safe_dance ausgelassen...#
+
+symmetric_dance(rightTurn(leftTurn(X))):-
+    correct_dance(rightTurn(leftTurn(X))),
+    symmetric_dance(X).
+-> correct_dance kann man hier komplett weglassen..
+
+2.4
+
+this proramm calculates the differencial...
+
+2.5
+
+that was kinda easy tho...
+
+2.6
+
+Traced queues match the searchtree
+[trace]  ?- stands_on(8,1                                                       ).
+   Call: (8) stands_on(8, 1) ? creep
+   Fail: (8) stands_on(8, 1) ? creep
+false.
+
+[trace]  ?- above(2,7).
+   Call: (8) above(2, 7) ? creep
+   Call: (9) stands_on(7, 2) ? creep
+   Fail: (9) stands_on(7, 2) ? creep
+   Fail: (8) above(2, 7) ? creep
+false.
+
+[trace]  ?- above(3,X).
+   Call: (8) above(3, _828) ? creep
+   Call: (9) stands_on(_828, 3) ? creep
+   Exit: (9) stands_on(9, 3) ? creep
+   Exit: (8) above(3, 9) ? creep
+X = 9.
+
+[trace]  ?- above(X,4).
+   Call: (8) above(_826, 4) ? creep
+   Call: (9) stands_on(4, _826) ? creep
+   Exit: (9) stands_on(4, 9) ? creep
+   Exit: (8) above(9, 4) ? creep
+X = 9.
+

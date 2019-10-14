@@ -1,0 +1,31 @@
+Hello,
+
+my expert system is about your favorite drink!
+You get asked questions and it will tell you what drink was on your mind.
+You can add your own drink too!
+When your drink has been found it tells you a funfact :) (this doesnt apply on later added drinks)
+just load aipractical19_751244.pl, start with  "main." and follow the instructions.
+
+NOTE: 
+
+when a drink is found, there are some actions. When returning to menue, answers to the questions are still in the database. By clicking "again" they will be retracted. 
+
+IMPORTANT HINT:
+
+there are some issues i couldnt get done in time:
+
+-> if theres no unification to a drink, the program crashes. When i put a "Unknown" drink to the drinks.rules file it will always end up there... (see drinks.rules line 275)
+-> the color question occures serveral times because it has to ask all possible colors. I couldnt manage to just ask untill the right color got determined.
+-> When the drink is found, theres an PCE error telling me that a button is false initialized but i dont see why.
+-> the print of derivation is done in an unatural way, just listing the answered questions, but i ran out of time :( hope thats okay.
+-> the listing of all drinks is hardcoded and newly added drinks dont shop up there.
+
+Im sure that the fixes for those bugs take little changes but i have a rought time the last weeks
+with a two holiday courses and a fulltime job.
+
+However i think my programm will be sufficient to pass! It took me much time to be honest.
+(the XPCE part wasnt the big issue)
+
+You may read the comments above the functions. 
+
+Have fun trying it out and maybe you will see my mistakes at first sight :)
